@@ -9,7 +9,7 @@ sns.set(style='dark')
 # Helper function yang dibutuhkan untuk menyiapkan berbagai dataframe
 
 def create_daily_orders_df(df):
-    daily_orders_df = df.resample(rule='D', on='order_date').agg({
+    daily_orders_df = df.resample(rule='D', on='registered').agg({
         "order_id": "nunique",
         "total_price": "sum"
     })
@@ -96,7 +96,7 @@ main_df = all_df[(all_df["registered"] >= str(start_date)) &
 # st.dataframe(main_df)
 
 # # Menyiapkan berbagai dataframe
-daily_orders_df = create_daily_orders_df(main_df)
+daily_orders_df = day_df(main_df)
 sum_order_items_df = create_sum_order_items_df(main_df)
 bygender_df = create_bygender_df(main_df)
 byage_df = create_byage_df(main_df)
