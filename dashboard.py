@@ -90,8 +90,8 @@ with st.sidebar:
         value=[min_date, max_date]
     )
 
-main_df = all_df[(all_df["order_date"] >= str(start_date)) & 
-                (all_df["order_date"] <= str(end_date))]
+main_df = all_df[(all_df["registered"] >= str(start_date)) & 
+                (all_df["registered"] <= str(end_date))]
 
 # st.dataframe(main_df)
 
