@@ -96,7 +96,7 @@ main_df = all_df[(all_df["registered"] >= str(start_date)) &
 # st.dataframe(main_df)
 
 # # Menyiapkan berbagai dataframe
-daily_orders_df = all_df(main_df)
+daily_orders_df = weekday_x_df(main_df)
 sum_order_items_df = create_sum_order_items_df(main_df)
 bygender_df = create_bygender_df(main_df)
 byage_df = create_byage_df(main_df)
