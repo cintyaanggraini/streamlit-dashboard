@@ -76,8 +76,8 @@ for column in datetime_columns:
     all_df[column] = pd.to_datetime(all_df[column])
 
 # Filter data
-min_date = all_df["order_date"].min()
-max_date = all_df["order_date"].max()
+min_date = all_df["registered"].min()
+max_date = all_df["registered"].max()
 
 with st.sidebar:
     # Menambahkan logo perusahaan
